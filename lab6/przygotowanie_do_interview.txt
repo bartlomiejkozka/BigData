@@ -1,0 +1,64 @@
+Zadanie 1 – Przygotowanie do interview
+
+--------------------------------------------------
+
+1. Najważniejsze narzędzia analityczne / Big Data / AI – Azure
+
+| Obszar               | Narzędzie                           | Opis |
+|----------------------|-------------------------------------|------|
+| Data Storage         | Azure Data Lake Storage Gen2        | Skalowalny, tani storage dla plików (np. logi, IoT, JSON, CSV, Parquet) |
+| Data Processing      | Azure Synapse Analytics             | Data Warehouse + Spark + Pipelines w jednym |
+|                      | Azure Databricks                    | Spark-based platform for big data & AI (MLflow, notebooks) |
+|                      | Azure Stream Analytics              | Analiza strumieniowa danych (np. z IoT) |
+| Integration & ETL    | Azure Data Factory                  | Narzędzie ETL/ELT, orkiestracja danych |
+| Machine Learning     | Azure Machine Learning              | Trening i deployment modeli ML/AI |
+| Monitoring & Ops     | Azure Monitor + Log Analytics       | Monitorowanie systemu, alerty, diagnostyka |
+| Compute              | Azure Functions / AKS               | Serverless lub konteneryzacja |
+| AI Services          | Cognitive Services                  | Prebuilt AI APIs |
+| Security             | Azure Key Vault / RBAC / Identities | Bezpieczeństwo danych i dostępów |
+
+--------------------------------------------------
+
+2. Architektura Big Data dla Rockstar Games
+Cel: Przetwarzanie danych graczy w czasie rzeczywistym i batch, wykrywanie błędów, analiza zachowań graczy, poprawa UX.
+Propozycja architektury (Azure-centric):
+
+[Gracz]
+   ↓
+[Telemetry SDK w grze]
+   ↓
+[Event Hub / Kafka]
+   ↓
+[Azure Stream Analytics] ────► [Cosmos DB] (realtime API, dashboards)
+   ↓
+[Azure Data Lake Storage Gen2] (raw, cleansed, curated)
+   ↓
+[Azure Synapse / Databricks] (ETL + batch analytics)
+   ↓
+[Azure ML] – model klasyfikujący błędy i predykcje churnu
+   ↓
+[Power BI / Fabric Dashboards]
+
+Use Case'y:
+- Wykrycie crashy i bugów (telemetria → anomaly detection)
+- Segmentacja graczy (RFM analysis, clustering)
+- Predykcja rezygnacji z gry (churn model)
+- Personalizacja doświadczenia (AI rekomendacje)
+
+Compute:
+- Stream: Azure Stream Analytics (serverless)
+- Batch: Databricks (autoscaling clusters)
+- ML: Azure ML + AKS Endpoint lub Managed Endpoint
+- Dashboard: Power BI / Microsoft Fabric
+
+--------------------------------------------------
+
+4. Powiązanie z certyfikatami
+
+| Certyfikat | Umiejętności |
+|------------|--------------|
+| DP-203     | Ingest, przetwarzanie, przechowywanie danych (Data Factory, Synapse, Data Lake, Stream Analytics) |
+| DP-100     | Praca z Azure Machine Learning, tworzenie modeli, AutoML, deployment, MLOps |
+| AI-102     | Budowanie rozwiązań AI z Cognitive Services, LUIS, Computer Vision, QnA Maker |
+
+--------------------------------------------------
