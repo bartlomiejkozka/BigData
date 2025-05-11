@@ -1,0 +1,14 @@
+{
+    "eventHubName": "player-telemetry",
+    "dataLakePath": "/raw/{year}/{month}/{day}/{eventType}/",
+    "requiredFields": ["eventType", "timestamp", "playerId"],
+    "retryPolicy": {
+      "maxRetries": 3,
+      "intervalSeconds": 30
+    },
+    "metadata": {
+      "source": "eventhub",
+      "ingestedBy": "ADF"
+    }
+}
+  
